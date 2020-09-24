@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Drawing;
 
 
 namespace WindowsFormsBoat
@@ -59,7 +54,6 @@ namespace WindowsFormsBoat
         /// </summary>         
         public Color DopColor { private set; get; }
 
-   
         /// <summary>      
         /// Признак наличия боковых линий        
         /// </summary>         
@@ -105,7 +99,7 @@ namespace WindowsFormsBoat
         {
             _startPosX = x;
             _startPosY = y;
-            _pictureWidth= width;
+            _pictureWidth = width;
             _pictureHeight = height;
         }
 
@@ -129,8 +123,8 @@ namespace WindowsFormsBoat
                 case Direction.Left:
                     if (_startPosX - step > 0)
                     {
-                            _startPosX -= step;
-                        
+                        _startPosX -= step;
+
                     }
                     break;
                 //вверх              
@@ -151,7 +145,6 @@ namespace WindowsFormsBoat
             }
         }
 
-
         /// <summary>        
         /// Отрисовка лодки      
         /// /// </summary>        
@@ -163,7 +156,7 @@ namespace WindowsFormsBoat
             Brush brush = new SolidBrush(MainColor);
             Brush brush1 = new SolidBrush(DopColor);
             Pen pen1 = new Pen(Color.White);
-            g.FillEllipse(brush, _startPosX, _startPosY,100, 35);
+            g.FillEllipse(brush, _startPosX, _startPosY, 100, 35);
             g.DrawLine(pen1, _startPosX + 12, _startPosY, _startPosX + 70, _startPosY);
             if (Cabin)
             {
@@ -174,22 +167,19 @@ namespace WindowsFormsBoat
             if (SideLine)
             {
                 //линии
-                g.DrawLine(pen1, _startPosX - 10, _startPosY + 20, _startPosX + 100,_startPosY + 20);
+                g.DrawLine(pen1, _startPosX - 10, _startPosY + 20, _startPosX + 100, _startPosY + 20);
                 g.DrawLine(pen1, _startPosX - 10, _startPosY + 22, _startPosX + 100, _startPosY + 22);
                 g.DrawLine(pen1, _startPosX + 12, _startPosY, _startPosX + 70, _startPosY);
             }
 
-            if(Motors)
+            if (Motors)
             {
                 //
                 Brush brush2 = new SolidBrush(Color.Black);
-                g.FillRectangle(brush2, _startPosX + 100, _startPosY + 10,5, 5 );
+                g.FillRectangle(brush2, _startPosX + 100, _startPosY + 10, 5, 5);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 16, 5, 5);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 22, 5, 5);
             }
         }
     }
 }
-
-   
-
