@@ -62,7 +62,7 @@ namespace WindowsFormsBoat
 
             if (Motors)
             {
-                //
+                //моторы
                 Brush brush2 = new SolidBrush(Color.Black);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 10, 5, 5);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 16, 5, 5);
