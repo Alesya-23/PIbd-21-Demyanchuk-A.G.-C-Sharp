@@ -5,14 +5,23 @@ using System.Windows.Forms;
 namespace WindowsFormsBoat
 {
     public partial class FormBoat : Form
-        
+
     {
-        private Boat boat;
+        private ITransportBoat boat;
         public FormBoat()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Передача машины на форму
+        /// </summary>
+        /// <param name="boat"></param>
+        public void SetBoat(ITransportBoat boat)
+        {
+            this.boat = boat;
+            Draw();
+        }
         /// <summary>       
         /// Метод отрисовки машины       
         /// </summary>         
@@ -24,16 +33,29 @@ namespace WindowsFormsBoat
             pictureBoat.Image = bmp;
         }
 
-        
         /// <summary>     
-        /// Обработка нажатия кнопки "Создать"   
+        /// Обработка нажатия кнопки "Создать катер"   
         /// </summary> 
         /// <param name="sender"></param>  
         /// <param name="e"></param>     
-          private void create_Click(object sender, EventArgs e)
+        private void buttonCreatBoat_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.Red, true, true, true);
+            boat = new Boat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green);
+            boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoat.Width,
+            pictureBoat.Height);
+            Draw();
+        }
+        /// <summary>     
+        /// Обработка нажатия кнопки "Создать лодку"   
+        /// </summary> 
+        /// <param name="sender"></param>  
+        /// <param name="e"></param>   
+        /// 
+        private void createMotorBoat_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            boat = new MotorBoat(rnd.Next(100, 300), rnd.Next(1000, 2000), Color.Green, Color.Red, true, true, true);
             boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoat.Width, pictureBoat.Height);
             Draw();
         }
@@ -64,23 +86,5 @@ namespace WindowsFormsBoat
             }
             Draw();
         }
-
-
-
-
-        private void FormBoat_Load(object sender, EventArgs e)
-        {
-
-        }
-
-      
-        private void pictureBoat_Click(object sender, EventArgs e)
-        {
-
-        }
-
-   
-
-        
     }
 }

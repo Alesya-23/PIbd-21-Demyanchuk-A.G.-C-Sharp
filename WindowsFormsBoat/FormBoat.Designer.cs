@@ -34,7 +34,6 @@
             this.btLeft = new System.Windows.Forms.Button();
             this.btRigth = new System.Windows.Forms.Button();
             this.btDown = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +45,6 @@
             this.pictureBoat.Size = new System.Drawing.Size(878, 444);
             this.pictureBoat.TabIndex = 0;
             this.pictureBoat.TabStop = false;
-            this.pictureBoat.Click += new System.EventHandler(this.buttonMove_Click);
             // 
             // btUp
             // 
@@ -96,23 +94,12 @@
             this.btDown.UseVisualStyleBackColor = true;
             this.btDown.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 42);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.create_Click);
-            // 
             // FormBoat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(878, 444);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btDown);
             this.Controls.Add(this.btRigth);
             this.Controls.Add(this.btLeft);
@@ -120,7 +107,6 @@
             this.Controls.Add(this.pictureBoat);
             this.Name = "FormBoat";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormBoat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoat)).EndInit();
             this.ResumeLayout(false);
 
@@ -133,7 +119,5 @@
         private System.Windows.Forms.Button btLeft;
         private System.Windows.Forms.Button btRigth;
         private System.Windows.Forms.Button btDown;
-        private System.Windows.Forms.Button button1;
     }
 }
-

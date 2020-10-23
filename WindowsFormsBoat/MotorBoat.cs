@@ -56,7 +56,7 @@ namespace WindowsFormsBoat
             if (SideLine)
             {
                 //линии
-                g.DrawLine(pen1, _startPosX - 10, _startPosY + 20, _startPosX + 100, _startPosY + 20);
+                g.DrawLine(pen1, _startPosX, _startPosY + 20, _startPosX + 100, _startPosY + 20);
                 g.DrawLine(pen1, _startPosX + 12, _startPosY, _startPosX + 70, _startPosY);
             }
 
