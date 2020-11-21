@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsBoat
 {
-         public enum Direction
+    public enum Direction
     {
         Up,
 

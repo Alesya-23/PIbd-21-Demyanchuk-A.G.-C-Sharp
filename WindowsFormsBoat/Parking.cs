@@ -3,7 +3,7 @@
 namespace WindowsFormsBoat
 {
     /// <summary>
-    /// Параметризованный класс для хранения набора объектов от интерфейса ITransport
+    /// Параметризованный класс для хранения набора объектов от интерфейса ITransportBoat
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Parking<T> where T : class, ITransportBoat
@@ -44,10 +44,10 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора сложения
-        /// Логика действия: на парковку добавляется автомобиль
+        /// Логика действия: на парковку добавляется лодка
         /// </summary>
         /// <param name="p">Парковка</param>
-        /// <param name="boat">Добавляемый автомобиль</param>
+        /// <param name="boat">Добавляемая лодка</param>
         /// <returns></returns>
         public static bool operator +(Parking<T> p, T boat)
         {
@@ -60,7 +60,7 @@ namespace WindowsFormsBoat
                     int y = 0;
                     int placesWidth = p.pictureWidth / p._placeSizeWidth;
                     p._places[i] = boat;
-                    boat.SetPosition(x + 4*margin + (p._placeSizeWidth + margin) * (i % placesWidth),
+                    boat.SetPosition(x + 4 * margin + (p._placeSizeWidth + margin) * (i % placesWidth),
                     y + margin + p._placeSizeHeight * (i / placesWidth), p.pictureWidth, p.pictureHeight);
                     return true;
                 }
@@ -69,7 +69,7 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора вычитания
-        /// Логика действия: с парковки забираем автомобиль
+        /// Логика действия: с парковки забираем лодку
         /// </summary>
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь
@@ -77,7 +77,7 @@ namespace WindowsFormsBoat
         /// <returns></returns>
         public static T operator -(Parking<T> p, int index)
         {
-            if (index>=p._places.Length || index < 0)
+            if (index >= p._places.Length || index < 0)
             {
                 return null;
             }
@@ -113,9 +113,7 @@ namespace WindowsFormsBoat
                     g.DrawLine(pen, x + (_placeSizeWidth + interval) * i, j * _placeSizeHeight, x + _placeSizeWidth + (_placeSizeWidth + interval) * i, j * _placeSizeHeight);
                 }
                 g.DrawLine(pen, i * (_placeSizeWidth + interval), 0, i * (_placeSizeWidth + interval), (pictureHeight / _placeSizeHeight) * _placeSizeHeight);
-
             }
         }
     }
 }
-

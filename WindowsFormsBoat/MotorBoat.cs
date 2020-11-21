@@ -28,8 +28,8 @@ namespace WindowsFormsBoat
         /// <param name="cabin"><кабина катера/param>
         /// <param name="motors">мотор </param>
 
-        public MotorBoat(int maxSpeed, float weight, Color mainColor, Color dopColor, bool sideLine, bool cabin, 
-            bool motors) : base (maxSpeed, weight, mainColor, 110, 60)
+        public MotorBoat(int maxSpeed, float weight, Color mainColor, Color dopColor, bool sideLine, bool cabin,
+            bool motors) : base(maxSpeed, weight, mainColor, 110, 60)
         {
             DopColor = dopColor;
             SideLine = sideLine;
@@ -59,10 +59,9 @@ namespace WindowsFormsBoat
                 g.DrawLine(pen1, _startPosX, _startPosY + 20, _startPosX + 100, _startPosY + 20);
                 g.DrawLine(pen1, _startPosX + 12, _startPosY, _startPosX + 70, _startPosY);
             }
-
             if (Motors)
             {
-                //
+                //моторы
                 Brush brush2 = new SolidBrush(Color.Black);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 10, 5, 5);
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 16, 5, 5);

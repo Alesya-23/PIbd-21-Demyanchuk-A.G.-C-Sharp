@@ -23,7 +23,7 @@ namespace WindowsFormsCars
         /// Высота окна отрисовки         
         /// </summary>         
         protected int _pictureHeight;
-    
+
         /// <summary>        
         /// Максимальная скорость        
         /// </summary>         
@@ -39,7 +39,6 @@ namespace WindowsFormsCars
         /// Основной цвет корпуса         
         /// </summary>         
         public Color MainColor { protected set; get; }
-
 
         public void SetPosition(int x, int y, int width, int height)
         {

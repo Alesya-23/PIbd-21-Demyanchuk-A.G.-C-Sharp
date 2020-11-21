@@ -4,29 +4,29 @@ using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
-        public partial class FormParking : Form
+    public partial class FormParking : Form
+    {
+        /// <summary>
+        /// Объект от класса-парковки
+        /// </summary>
+        private readonly Parking<Boat> parking;
+        public FormParking()
         {
-            /// <summary>
-            /// Объект от класса-парковки
-            /// </summary>
-            private readonly Parking<Boat> parking;
-            public FormParking()
-            {
-                InitializeComponent();
-                parking = new Parking<Boat>(pictureBoxParcing.Width,
-                pictureBoxParcing.Height);
-                Draw();
-            }
-            /// <summary>
-            /// Метод отрисовки парковки
-            /// </summary>
-            private void Draw()
-            {
-                Bitmap bmp = new Bitmap(pictureBoxParcing.Width, pictureBoxParcing.Height);
-                Graphics gr = Graphics.FromImage(bmp);
-                parking.Draw(gr);
-                pictureBoxParcing.Image = bmp;
-            }
+            InitializeComponent();
+            parking = new Parking<Boat>(pictureBoxParcing.Width,
+            pictureBoxParcing.Height);
+            Draw();
+        }
+        /// <summary>
+        /// Метод отрисовки парковки
+        /// </summary>
+        private void Draw()
+        {
+            Bitmap bmp = new Bitmap(pictureBoxParcing.Width, pictureBoxParcing.Height);
+            Graphics gr = Graphics.FromImage(bmp);
+            parking.Draw(gr);
+            pictureBoxParcing.Image = bmp;
+        }
         /// <summary>
         /// Обработка нажатия кнопки "Припарковать автомобиль"
         /// </summary>
@@ -95,4 +95,3 @@ namespace WindowsFormsBoat
         }
     }
 }
-
