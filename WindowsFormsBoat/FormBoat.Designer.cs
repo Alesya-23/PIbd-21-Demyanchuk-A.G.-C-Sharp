@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsBoat
+namespace WindowsFormsBoat
 {
     partial class FormBoat
     {
@@ -109,7 +109,6 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoat)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion

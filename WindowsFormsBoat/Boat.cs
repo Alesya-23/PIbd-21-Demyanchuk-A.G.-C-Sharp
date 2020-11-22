@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using WindowsFormsCars;
 
 namespace WindowsFormsBoat
@@ -97,8 +97,7 @@ namespace WindowsFormsBoat
             Brush brush = new SolidBrush(MainColor);
             Pen pen1 = new Pen(Color.White);
             g.FillEllipse(brush, _startPosX, _startPosY, 100, 35);
-            g.DrawLine(pen1, _startPosX, _startPosY + 22, _startPosX + 100, _startPosY + 22);
-
+            g.DrawLine(pen1, _startPosX - 10, _startPosY + 22, _startPosX + 100, _startPosY + 22);
         }
     }
 }
