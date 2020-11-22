@@ -14,7 +14,7 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Передача машины на форму
+        /// Передача лодки на форму
         /// </summary>
         /// <param name="boat"></param>
         public void SetBoat(ITransportBoat boat)
@@ -23,7 +23,7 @@ namespace WindowsFormsBoat
             Draw();
         }
         /// <summary>       
-        /// Метод отрисовки машины       
+        /// Метод отрисовки лодки       
         /// </summary>         
         private void Draw()
         {
