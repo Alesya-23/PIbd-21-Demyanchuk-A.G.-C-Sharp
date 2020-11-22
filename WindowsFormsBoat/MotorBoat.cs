@@ -25,7 +25,7 @@ namespace WindowsFormsBoat
         /// <param name="mainColor">Основной цвет корпуса</param>        
         /// <param name="dopColor">Дополнительный цвет (для полос) </param>                 
         /// <param name="sideLine">Признак наличия боковых полос</param>   
-        /// <param name="cabin"><кабина катера/param>
+        /// <param name="cabin">кабина катера</param>
         /// <param name="motors">мотор </param>
 
         public MotorBoat(int maxSpeed, float weight, Color mainColor, Color dopColor, bool sideLine, bool cabin,

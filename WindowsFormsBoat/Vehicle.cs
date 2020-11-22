@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using WindowsFormsBoat;
 
-namespace WindowsFormsCars
+namespace WindowsFormsBoat
 {
     public abstract class Vehicle : ITransportBoat
     {
@@ -16,7 +16,8 @@ namespace WindowsFormsCars
         protected float _startPosY;
 
         /// <summary>         
-        /// Ширина окна отрисовки         /// </summary>        
+        /// Ширина окна отрисовки         
+        /// </summary>        
         protected int _pictureWidth;
 
         /// <summary>        

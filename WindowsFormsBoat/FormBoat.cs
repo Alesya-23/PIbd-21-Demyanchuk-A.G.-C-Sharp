@@ -5,7 +5,6 @@ using System.Windows.Forms;
 namespace WindowsFormsBoat
 {
     public partial class FormBoat : Form
-
     {
         private ITransportBoat boat;
         public FormBoat()
