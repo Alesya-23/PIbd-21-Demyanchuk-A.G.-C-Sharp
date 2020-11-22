@@ -5,7 +5,6 @@ using System.Windows.Forms;
 namespace WindowsFormsBoat
 {
     public partial class FormBoat : Form
-
     {
         private ITransportBoat boat;
         public FormBoat()
@@ -23,7 +22,7 @@ namespace WindowsFormsBoat
             Draw();
         }
         /// <summary>       
-        /// Метод отрисовки машины       
+        /// Метод отрисовки лодки       
         /// </summary>         
         private void Draw()
         {

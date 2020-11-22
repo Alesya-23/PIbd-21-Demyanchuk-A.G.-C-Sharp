@@ -63,6 +63,7 @@
     <Compile Include="ITransportBoat.cs" />
     <Compile Include="MotorBoat.cs" />
     <Compile Include="Parking.cs" />
+    <Compile Include="ParkingCollection.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicle.cs" />

@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using WindowsFormsCars;
 
 namespace WindowsFormsBoat
 {
@@ -28,7 +27,7 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Конструкторс изменением размеров машины
+        /// Конструкторс изменением размеров лодки
         /// </summary>
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес лодки</param>
