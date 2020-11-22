@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,7 +13,7 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Передача машины на форму
+        /// Передача лодки на форму
         /// </summary>
         /// <param name="boat"></param>
         public void SetBoat(ITransportBoat boat)
@@ -32,7 +32,7 @@ namespace WindowsFormsBoat
             pictureBoat.Image = bmp;
         }
 
-        /// <summary>     
+       /// <summary>     
         /// Обработка нажатия кнопки "Создать катер"   
         /// </summary> 
         /// <param name="sender"></param>  
@@ -58,7 +58,6 @@ namespace WindowsFormsBoat
             boat.SetPosition(rnd.Next(10, 100), rnd.Next(10, 100), pictureBoat.Width, pictureBoat.Height);
             Draw();
         }
-
         /// <summary>    
         /// Обработка нажатия кнопок управления     
         /// </summary>         
