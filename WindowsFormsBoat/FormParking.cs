@@ -92,7 +92,7 @@ namespace WindowsFormsBoat
             }
         }
         /// <summary>
-        /// Обработка нажатия кнопки "Припарковать автомобиль"
+        /// Обработка нажатия кнопки "Припарковать лодку"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -117,7 +117,7 @@ namespace WindowsFormsBoat
             }
         }
         /// <summary>
-        /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
+        /// Обработка нажатия кнопки "Припарковать моторную лодку"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

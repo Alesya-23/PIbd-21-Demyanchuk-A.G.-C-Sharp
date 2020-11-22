@@ -25,3 +25,4 @@ namespace WindowsFormsBoat
         void DrawTransport(Graphics g);
     }
 }
+ч
