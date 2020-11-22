@@ -28,7 +28,7 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Конструкторс изменением размеров машины
+        /// Конструкторс изменением размеров лодки
         /// </summary>
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес лодки</param>
@@ -98,7 +98,6 @@ namespace WindowsFormsBoat
             Pen pen1 = new Pen(Color.White);
             g.FillEllipse(brush, _startPosX, _startPosY, 100, 35);
             g.DrawLine(pen1, _startPosX - 10, _startPosY + 22, _startPosX + 100, _startPosY + 22);
-
         }
     }
 }

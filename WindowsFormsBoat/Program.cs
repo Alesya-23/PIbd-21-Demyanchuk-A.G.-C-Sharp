@@ -16,7 +16,7 @@ namespace WindowsFormsBoat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBoat());
+            Application.Run(new FormParking());
         }
     }
 }

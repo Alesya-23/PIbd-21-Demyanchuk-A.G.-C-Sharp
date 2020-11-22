@@ -34,8 +34,6 @@ namespace WindowsFormsBoat
             this.btLeft = new System.Windows.Forms.Button();
             this.btRigth = new System.Windows.Forms.Button();
             this.btDown = new System.Windows.Forms.Button();
-            this.buttonCreateBoat = new System.Windows.Forms.Button();
-            this.buttonCreateMotorBoat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +45,6 @@ namespace WindowsFormsBoat
             this.pictureBoat.Size = new System.Drawing.Size(878, 444);
             this.pictureBoat.TabIndex = 0;
             this.pictureBoat.TabStop = false;
-            this.pictureBoat.Click += new System.EventHandler(this.buttonMove_Click);
             // 
             // btUp
             // 
@@ -97,36 +94,12 @@ namespace WindowsFormsBoat
             this.btDown.UseVisualStyleBackColor = true;
             this.btDown.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // buttonCreateBoat
-            // 
-            this.buttonCreateBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreateBoat.Location = new System.Drawing.Point(32, 12);
-            this.buttonCreateBoat.Name = "buttonCreateBoat";
-            this.buttonCreateBoat.Size = new System.Drawing.Size(127, 47);
-            this.buttonCreateBoat.TabIndex = 5;
-            this.buttonCreateBoat.Text = "Create Boat";
-            this.buttonCreateBoat.UseVisualStyleBackColor = true;
-            this.buttonCreateBoat.Click += new System.EventHandler(this.buttonCreatBoat_Click);
-            // 
-            // buttonCreateMotorBoat
-            // 
-            this.buttonCreateMotorBoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCreateMotorBoat.Location = new System.Drawing.Point(165, 12);
-            this.buttonCreateMotorBoat.Name = "buttonCreateMotorBoat";
-            this.buttonCreateMotorBoat.Size = new System.Drawing.Size(176, 47);
-            this.buttonCreateMotorBoat.TabIndex = 6;
-            this.buttonCreateMotorBoat.Text = "Create MotorBoat";
-            this.buttonCreateMotorBoat.UseVisualStyleBackColor = true;
-            this.buttonCreateMotorBoat.Click += new System.EventHandler(this.createMotorBoat_Click);
-            // 
             // FormBoat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(878, 444);
-            this.Controls.Add(this.buttonCreateMotorBoat);
-            this.Controls.Add(this.buttonCreateBoat);
             this.Controls.Add(this.btDown);
             this.Controls.Add(this.btRigth);
             this.Controls.Add(this.btLeft);
@@ -136,7 +109,6 @@ namespace WindowsFormsBoat
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoat)).EndInit();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -146,7 +118,5 @@ namespace WindowsFormsBoat
         private System.Windows.Forms.Button btLeft;
         private System.Windows.Forms.Button btRigth;
         private System.Windows.Forms.Button btDown;
-        private System.Windows.Forms.Button buttonCreateBoat;
-        private System.Windows.Forms.Button buttonCreateMotorBoat;
     }
 }
