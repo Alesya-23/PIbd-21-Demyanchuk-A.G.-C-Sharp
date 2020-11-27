@@ -97,7 +97,6 @@ namespace WindowsFormsBoat
             Pen pen1 = new Pen(Color.White);
             g.FillEllipse(brush, _startPosX, _startPosY, 100, 35);
             g.DrawLine(pen1, _startPosX, _startPosY + 22, _startPosX + 100, _startPosY + 22);
-
         }
     }
 }
