@@ -77,7 +77,6 @@ namespace WindowsFormsBoat
                     break;
                 //вниз                 
                 case Direction.Down:
-
                     if (_startPosY + step < _pictureHeight - boatHeight)
                     {
                         _startPosY += step;
