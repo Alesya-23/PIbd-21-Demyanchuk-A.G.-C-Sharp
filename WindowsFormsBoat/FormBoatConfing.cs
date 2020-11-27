@@ -110,7 +110,6 @@ namespace WindowsFormsBoat
                     DrawBoat();
                 }
             }
-
         }
         /// <summary>
         /// Передаем информацию при нажатии на Label

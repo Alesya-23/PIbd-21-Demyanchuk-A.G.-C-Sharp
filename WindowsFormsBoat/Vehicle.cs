@@ -16,7 +16,8 @@ namespace WindowsFormsBoat
         protected float _startPosY;
 
         /// <summary>         
-        /// Ширина окна отрисовки         /// </summary>        
+        /// Ширина окна отрисовки         
+        /// </summary>        
         protected int _pictureWidth;
 
         /// <summary>        
@@ -32,14 +33,12 @@ namespace WindowsFormsBoat
         /// <summary>         
         /// Вес лодки        
         /// </summary>        
-
         public float Weight { protected set; get; }
 
         /// <summary>         
         /// Основной цвет корпуса         
         /// </summary>         
         public Color MainColor { protected set; get; }
-
 
         public void SetPosition(int x, int y, int width, int height)
         {

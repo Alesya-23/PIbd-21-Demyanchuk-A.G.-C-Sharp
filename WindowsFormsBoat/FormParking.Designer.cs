@@ -177,7 +177,6 @@ namespace WindowsFormsBoat
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
         private System.Windows.Forms.Label labelNumberSpaceForBoat;
         private System.Windows.Forms.Button btnPickUp;
-        private MaskInputRejectedEventHandler maskedTextBox_MaskInputRejected;
         private ListBox listBoxParkings;
         private Button btnDeleteParking;
         private Label lblParking;

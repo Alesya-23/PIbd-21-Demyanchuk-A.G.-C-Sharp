@@ -11,7 +11,6 @@ namespace WindowsFormsBoat
         /// <summary>
         /// Словарь (хранилище) с парковками
         /// </summary>
-        /// 
         readonly Dictionary<string, Parking<Vehicle>> parkingStages;
         /// <summary>
         /// Возвращение списка названий праковок
@@ -68,7 +67,6 @@ namespace WindowsFormsBoat
             {
                 parkingStages.Remove(Keys[index]);
             }
-
         }
         /// <summary>
         /// Доступ к парковке
