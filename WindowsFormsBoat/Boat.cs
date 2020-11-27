@@ -65,7 +65,6 @@ namespace WindowsFormsBoat
                     if (_startPosX - step > 0)
                     {
                         _startPosX -= step;
-
                     }
                     break;
                 //вверх              
