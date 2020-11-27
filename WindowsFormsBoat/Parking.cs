@@ -4,7 +4,7 @@ using System.Drawing;
 namespace WindowsFormsBoat
 {
     /// <summary>
-    /// Параметризованный класс для хранения набора объектов от интерфейса ITransportBoat
+    /// Параметризованный класс для хранения набора объектов от интерфейса ITransport
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public class Parking<T> where T : class, ITransportBoat
@@ -52,10 +52,10 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора сложения
-        /// Логика действия: на парковку добавляется лодка
+        /// Логика действия: на парковку добавляется автомобиль
         /// </summary>
         /// <param name="p">Парковка</param>
-        /// <param name="boat">Добавляемая лодка</param>
+        /// <param name="boat">Добавляемый автомобиль</param>
         /// <returns></returns>
         public static bool operator +(Parking<T> p, T boat)
         {
@@ -68,7 +68,7 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора вычитания
-        /// Логика действия: с парковки забираем лодку
+        /// Логика действия: с парковки забираем автомобиль
         /// </summary>
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь

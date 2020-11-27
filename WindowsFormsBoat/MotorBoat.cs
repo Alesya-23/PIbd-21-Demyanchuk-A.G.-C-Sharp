@@ -68,5 +68,14 @@ namespace WindowsFormsBoat
                 g.FillRectangle(brush2, _startPosX + 100, _startPosY + 22, 5, 5);
             }
         }
+
+        /// <summary>
+        /// Смена дополнительного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        public void SetDopColor(Color color)
+        {
+            DopColor = color;
+        }
     }
 }

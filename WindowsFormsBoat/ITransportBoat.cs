@@ -18,11 +18,17 @@ namespace WindowsFormsBoat
         /// </summary>
         /// <param name="direction">Направление</param>
         void MoveTransport(Direction direction);
+
         /// <summary>
         /// Отрисовка
         /// </summary>
         /// <param name="g"></param>
         void DrawTransport(Graphics g);
+
+        /// <summary>
+        /// Смена основного цвета
+        /// </summary>
+        /// <param name="color"></param>
+        void SetMainColor(Color color);
     }
 }
-ч
