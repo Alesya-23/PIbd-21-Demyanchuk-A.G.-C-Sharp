@@ -52,10 +52,10 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора сложения
-        /// Логика действия: на парковку добавляется автомобиль
+        /// Логика действия: на парковку добавляется лодка
         /// </summary>
         /// <param name="p">Парковка</param>
-        /// <param name="boat">Добавляемый автомобиль</param>
+        /// <param name="boat">Добавляемая лодка</param>
         /// <returns></returns>
         public static bool operator +(Parking<T> p, T boat)
         {
@@ -68,7 +68,7 @@ namespace WindowsFormsBoat
         }
         /// <summary>
         /// Перегрузка оператора вычитания
-        /// Логика действия: с парковки забираем автомобиль
+        /// Логика действия: с парковки забираем лодку
         /// </summary>
         /// <param name="p">Парковка</param>
         /// <param name="index">Индекс места, с которого пытаемся извлечь
@@ -116,6 +116,20 @@ namespace WindowsFormsBoat
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth,
                (pictureHeight / _placeSizeHeight) * _placeSizeHeight);
             }
+        }
+
+        /// <summary>
+        /// Функция получения элементы из списка
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public T GetNext(int index)
+        {
+            if (index < 0 || index >= _places.Count)
+            {
+                return null;
+            }
+            return _places[index];
         }
     }
 }

@@ -6,7 +6,7 @@ namespace WindowsFormsBoat
     public partial class FormBoatConfig : Form
     {
         /// <summary>
-        /// Переменная-выбранная машина
+        /// Переменная-выбранная лодка
         /// </summary>
         Vehicle boat = null;
         /// <summary>
@@ -27,7 +27,7 @@ namespace WindowsFormsBoat
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
         /// <summary>
-        /// Отрисовать машину
+        /// Отрисовать лодку
         /// </summary>
         private void DrawBoat()
         {
@@ -167,7 +167,7 @@ namespace WindowsFormsBoat
             DrawBoat();
         }
         /// <summary>
-        /// Добавление машины
+        /// Добавление лодки
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

@@ -50,7 +50,6 @@ namespace WindowsFormsBoat
         /// </summary> 
         /// <param name="sender"></param>  
         /// <param name="e"></param>   
-        /// 
         private void createMotorBoat_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();

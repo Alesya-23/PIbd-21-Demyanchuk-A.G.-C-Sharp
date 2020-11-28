@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace WindowsFormsBoat
 {
@@ -8,10 +9,16 @@ namespace WindowsFormsBoat
         /// Ширина отрисовки лодки         
         /// </summary> 
         protected readonly int boatWidth = 103;
+
         /// <summary>         
         /// Высота отрисовки лодки         
         /// </summary>         
         protected readonly int boatHeight = 42;
+
+        /// <summary>
+        /// Разделитель для записи информации в файл
+        /// </summary>
+        public readonly char separator = ';';
 
         /// <summary>        
         /// Конструктор         
@@ -27,7 +34,22 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Конструкторс изменением размеров лодки
+        /// Конструктор для загрузки с файла
+        /// </summary>
+        /// <param name="info">Информация по объекту</param>
+        public Boat(string info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 3)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+            }
+        }
+
+        /// <summary>
+        /// Конструкторс изменением размеров машины
         /// </summary>
         /// <param name="maxSpeed">Максимальная скорость</param>
         /// <param name="weight">Вес лодки</param>
@@ -65,7 +87,6 @@ namespace WindowsFormsBoat
                     if (_startPosX - step > 0)
                     {
                         _startPosX -= step;
-
                     }
                     break;
                 //вверх              
@@ -77,7 +98,6 @@ namespace WindowsFormsBoat
                     break;
                 //вниз                 
                 case Direction.Down:
-
                     if (_startPosY + step < _pictureHeight - boatHeight)
                     {
                         _startPosY += step;
@@ -97,7 +117,10 @@ namespace WindowsFormsBoat
             Pen pen1 = new Pen(Color.White);
             g.FillEllipse(brush, _startPosX, _startPosY, 100, 35);
             g.DrawLine(pen1, _startPosX, _startPosY + 22, _startPosX + 100, _startPosY + 22);
-
+        }
+        public override string ToString()
+        {
+            return $"{MaxSpeed}{separator}{Weight}{separator}{MainColor.Name}";
         }
     }
 }
