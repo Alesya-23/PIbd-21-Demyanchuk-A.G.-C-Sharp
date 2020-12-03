@@ -30,8 +30,6 @@ namespace WindowsFormsBoat
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnParkingBoat = new System.Windows.Forms.Button();
-            this.btnParkingMotorBoat = new System.Windows.Forms.Button();
             this.pictureBoxParcing = new System.Windows.Forms.PictureBox();
             this.groupBoxForPickUp = new System.Windows.Forms.GroupBox();
             this.btnPickUp = new System.Windows.Forms.Button();
@@ -42,29 +40,10 @@ namespace WindowsFormsBoat
             this.lblParking = new System.Windows.Forms.Label();
             this.maskedTextBoxParking = new System.Windows.Forms.MaskedTextBox();
             this.btnAddParking = new System.Windows.Forms.Button();
+            this.buttonAddBoats = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParcing)).BeginInit();
             this.groupBoxForPickUp.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnParkingBoat
-            // 
-            this.btnParkingBoat.Location = new System.Drawing.Point(772, 255);
-            this.btnParkingBoat.Name = "btnParkingBoat";
-            this.btnParkingBoat.Size = new System.Drawing.Size(139, 68);
-            this.btnParkingBoat.TabIndex = 0;
-            this.btnParkingBoat.Text = "Припарковать лодку";
-            this.btnParkingBoat.UseVisualStyleBackColor = true;
-            this.btnParkingBoat.Click += new System.EventHandler(this.buttonSetBoat_Click);
-            // 
-            // btnParkingMotorBoat
-            // 
-            this.btnParkingMotorBoat.Location = new System.Drawing.Point(772, 329);
-            this.btnParkingMotorBoat.Name = "btnParkingMotorBoat";
-            this.btnParkingMotorBoat.Size = new System.Drawing.Size(139, 63);
-            this.btnParkingMotorBoat.TabIndex = 1;
-            this.btnParkingMotorBoat.Text = "Припарковать катер";
-            this.btnParkingMotorBoat.UseVisualStyleBackColor = true;
-            this.btnParkingMotorBoat.Click += new System.EventHandler(this.buttonSetMotorBoat_Click);
             // 
             // pictureBoxParcing
             // 
@@ -158,11 +137,23 @@ namespace WindowsFormsBoat
             this.btnAddParking.UseVisualStyleBackColor = true;
             this.btnAddParking.Click += new System.EventHandler(this.buttonAddParking_Click);
             // 
+            // buttonAddBoats
+            // 
+            this.buttonAddBoats.AutoSize = true;
+            this.buttonAddBoats.Location = new System.Drawing.Point(773, 268);
+            this.buttonAddBoats.Name = "buttonAddBoats";
+            this.buttonAddBoats.Size = new System.Drawing.Size(143, 68);
+            this.buttonAddBoats.TabIndex = 9;
+            this.buttonAddBoats.Text = "Добавить лодку";
+            this.buttonAddBoats.UseVisualStyleBackColor = true;
+            this.buttonAddBoats.Click += new System.EventHandler(this.buttonAddBoat);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 558);
+            this.Controls.Add(this.buttonAddBoats);
             this.Controls.Add(this.btnAddParking);
             this.Controls.Add(this.maskedTextBoxParking);
             this.Controls.Add(this.lblParking);
@@ -170,8 +161,6 @@ namespace WindowsFormsBoat
             this.Controls.Add(this.listBoxParkings);
             this.Controls.Add(this.groupBoxForPickUp);
             this.Controls.Add(this.pictureBoxParcing);
-            this.Controls.Add(this.btnParkingMotorBoat);
-            this.Controls.Add(this.btnParkingBoat);
             this.Name = "FormParking";
             this.Text = "Парковка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParcing)).EndInit();
@@ -179,12 +168,10 @@ namespace WindowsFormsBoat
             this.groupBoxForPickUp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnParkingBoat;
-        private System.Windows.Forms.Button btnParkingMotorBoat;
         private System.Windows.Forms.PictureBox pictureBoxParcing;
         private System.Windows.Forms.GroupBox groupBoxForPickUp;
         private System.Windows.Forms.MaskedTextBox maskedTextBox;
@@ -195,5 +182,6 @@ namespace WindowsFormsBoat
         private Label lblParking;
         private MaskedTextBox maskedTextBoxParking;
         private Button btnAddParking;
+        private Button buttonAddBoats;
     }
 }

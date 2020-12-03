@@ -33,7 +33,6 @@ namespace WindowsFormsBoat
         /// <summary>         
         /// Вес лодки        
         /// </summary>        
-
         public float Weight { protected set; get; }
 
         /// <summary>         
@@ -49,6 +48,10 @@ namespace WindowsFormsBoat
             _pictureHeight = height;
         }
 
+        public void SetMainColor(Color color)
+        {
+            MainColor = color;
+        }
         public abstract void DrawTransport(Graphics g);
         public abstract void MoveTransport(Direction direction);
     }

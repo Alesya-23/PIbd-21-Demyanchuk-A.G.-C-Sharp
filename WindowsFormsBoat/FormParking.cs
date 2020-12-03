@@ -92,57 +92,32 @@ namespace WindowsFormsBoat
             }
         }
         /// <summary>
-        /// Обработка нажатия кнопки "Припарковать лодку"
+        /// Обработка нажатия кнопки "Припарковать автомобиль"
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonSetBoat_Click(object sender, EventArgs e)
+        private void buttonAddBoat(object sender, EventArgs e)
         {
-            if (listBoxParkings.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var boat = new Boat(100, 1000, dialog.Color);
-                    if (parkingCollection[listBoxParkings.SelectedItem.ToString()] +
-                   boat)
-                    {
-                        Draw();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Парковка переполнена");
-                    }
-                }
-            }
+            FormBoatConfig formBoatConfig = new FormBoatConfig();
+            formBoatConfig.AddEvent(AddBoat);
+            formBoatConfig.ShowDialog();
         }
+
         /// <summary>
-        /// Обработка нажатия кнопки "Припарковать моторную лодку"
+        /// Метод добавления машины
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonSetMotorBoat_Click(object sender, EventArgs e)
+        /// <param name="car"></param>
+        private void AddBoat(Vehicle boat)
         {
-            if (listBoxParkings.SelectedIndex > -1)
+            if (boat != null && listBoxParkings.SelectedIndex > -1)
             {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
+                if ((parkingCollection[listBoxParkings.SelectedItem.ToString()]) + boat)
                 {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var boat = new MotorBoat(100, 1000, dialog.Color,
-                       dialogDop.Color, true, true, true);
-                        if (parkingCollection[listBoxParkings.SelectedItem.ToString()]
-                       + boat)
-                        {
-                            Draw();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Парковка переполнена");
-                        }
-                    }
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Лодку не удалось поставить");
                 }
             }
         }
