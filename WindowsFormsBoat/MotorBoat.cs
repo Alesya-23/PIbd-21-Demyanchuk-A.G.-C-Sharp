@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace WindowsFormsBoat
 {
@@ -25,9 +26,8 @@ namespace WindowsFormsBoat
         /// <param name="mainColor">Основной цвет корпуса</param>        
         /// <param name="dopColor">Дополнительный цвет (для полос) </param>                 
         /// <param name="sideLine">Признак наличия боковых полос</param>   
-        /// <param name="cabin">кабина катера</param>
+        /// <param name="cabin"><кабина катера/param>
         /// <param name="motors">мотор </param>
-
         public MotorBoat(int maxSpeed, float weight, Color mainColor, Color dopColor, bool sideLine, bool cabin,
             bool motors) : base(maxSpeed, weight, mainColor, 110, 60)
         {
@@ -35,6 +35,25 @@ namespace WindowsFormsBoat
             SideLine = sideLine;
             Cabin = cabin;
             Motors = motors;
+        }
+
+        /// <summary>
+        /// Конструктор для загрузки с файла
+        /// </summary>
+        /// <param name="info"></param>
+        public MotorBoat(string info) : base(info)
+        {
+            string[] strs = info.Split(separator);
+            if (strs.Length == 7)
+            {
+                MaxSpeed = Convert.ToInt32(strs[0]);
+                Weight = Convert.ToInt32(strs[1]);
+                MainColor = Color.FromName(strs[2]);
+                DopColor = Color.FromName(strs[3]);
+                SideLine = Convert.ToBoolean(strs[4]);
+                Cabin = Convert.ToBoolean(strs[5]);
+                Motors = Convert.ToBoolean(strs[6]);
+            }
         }
 
         /// <summary>        
@@ -59,6 +78,7 @@ namespace WindowsFormsBoat
                 g.DrawLine(pen1, _startPosX, _startPosY + 20, _startPosX + 100, _startPosY + 20);
                 g.DrawLine(pen1, _startPosX + 12, _startPosY, _startPosX + 70, _startPosY);
             }
+
             if (Motors)
             {
                 //моторы
@@ -76,6 +96,11 @@ namespace WindowsFormsBoat
         public void SetDopColor(Color color)
         {
             DopColor = color;
+        }
+        public override string ToString()
+        {
+            return $"{base.ToString()}{separator}{DopColor.Name}{separator}" +
+                   $"{SideLine}{separator}{Cabin}{separator}{Motors}";
         }
     }
 }
