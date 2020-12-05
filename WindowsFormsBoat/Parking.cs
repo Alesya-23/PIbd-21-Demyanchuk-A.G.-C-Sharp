@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowsFormsBoat
 {
@@ -61,11 +63,12 @@ namespace WindowsFormsBoat
         {
             if (p._places.Count >= p._maxCount)
             {
-                return false;
+                throw new ParkingOverflowException();
             }
             p._places.Add(boat);
             return true;
         }
+
         /// <summary>
         /// Перегрузка оператора вычитания
         /// Логика действия: с парковки забираем лодку
@@ -78,7 +81,7 @@ namespace WindowsFormsBoat
         {
             if (index < -1 || index > p._places.Count)
             {
-                return null;
+                throw new ParkingNotFoundException(index);
             }
             T boat = p._places[index];
             p._places.RemoveAt(index);

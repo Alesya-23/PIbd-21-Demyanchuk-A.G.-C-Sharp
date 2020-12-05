@@ -97,7 +97,7 @@ namespace WindowsFormsBoat
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         /// <returns></returns>
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -131,18 +131,17 @@ namespace WindowsFormsBoat
                     }
                 }
             }
-            return true;
         }
         /// <summary>
         /// Загрузка нформации по лодкам на парковках из файла
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             using (StreamReader fs = new StreamReader(filename))
             {
@@ -150,8 +149,7 @@ namespace WindowsFormsBoat
                 string strs = fs.ReadLine();
                 if (!strs.Contains("ParkingCollection"))
                 {
-                    //если нет такой записи, то это не те данные
-                    return false;
+                    throw new ArgumentException("Неверный формат файла");
                 }
                 Vehicle boat = null;
                 string key = string.Empty;
@@ -175,11 +173,10 @@ namespace WindowsFormsBoat
                         }
                         if (!(parkingStages[key] + boat))
                         {
-                            return false;
+                            throw new IndexOutOfRangeException("Не удалось загрузить лодку на парковку");
                         }
                     }
                 }
-                return true;
             }
         }
     }
