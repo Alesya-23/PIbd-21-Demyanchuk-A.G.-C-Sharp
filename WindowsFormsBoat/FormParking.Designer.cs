@@ -47,6 +47,7 @@ namespace WindowsFormsBoat
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.buttonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParcing)).BeginInit();
             this.groupBoxForPickUp.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -198,11 +199,22 @@ namespace WindowsFormsBoat
             // 
             this.openFileDialog.Filter = "«txt file | *.txt";
             // 
+            // buttonSort
+            // 
+            this.buttonSort.Location = new System.Drawing.Point(773, 356);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(139, 49);
+            this.buttonSort.TabIndex = 11;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(961, 599);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.buttonAddBoats);
             this.Controls.Add(this.btnAddParking);
             this.Controls.Add(this.maskedTextBoxParking);
@@ -222,6 +234,7 @@ namespace WindowsFormsBoat
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -242,5 +255,6 @@ namespace WindowsFormsBoat
         private ToolStripMenuItem загрузитьToolStripMenuItem;
         private SaveFileDialog saveFileDialog;
         private OpenFileDialog openFileDialog;
+        private Button buttonSort;
     }
 }

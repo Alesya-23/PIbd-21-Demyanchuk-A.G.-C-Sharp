@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace WindowsFormsBoat
 {
-    public class MotorBoat : Boat
+    public class MotorBoat : Boat, IEquatable<MotorBoat>
     {
         public Color DopColor { private set; get; }
 
@@ -101,6 +101,57 @@ namespace WindowsFormsBoat
         {
             return $"{base.ToString()}{separator}{DopColor.Name}{separator}" +
                    $"{SideLine}{separator}{Cabin}{separator}{Motors}";
+        }
+
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(MotorBoat other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (SideLine != other.SideLine)
+            {
+                return false;
+            }
+            if (Cabin != other.Cabin)
+            {
+                return false;
+            }
+            if (Motors != other.Motors)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is MotorBoat BoatObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(BoatObj);
+            }
         }
     }
 }
