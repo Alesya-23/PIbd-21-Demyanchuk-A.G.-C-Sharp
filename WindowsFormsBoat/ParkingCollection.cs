@@ -109,31 +109,25 @@ namespace WindowsFormsBoat
         /// <param name="filename">Путь и имя файла</param>
         public void SaveData(string filename)
         {
-            if (File.Exists(filename))
+            using (StreamWriter sw = new StreamWriter
+               (filename, false, System.Text.Encoding.Default))
             {
-                File.Delete(filename);
-            }
-            using (FileStream fs = new FileStream(filename, FileMode.Create))
-            {
-                WriteToFile($"ParkingCollection{Environment.NewLine}", fs);
+                sw.WriteLine("ParkingCollection");
                 foreach (var level in parkingStages)
                 {
-                    //Начинаем парковку
-                    WriteToFile($"Parking{separator}{level.Key}{Environment.NewLine}",
-                    fs);
-                    foreach (ITransportBoat boat in level.Value)
+                    sw.WriteLine("Parking" + separator + level.Key);
+
+                    foreach (Boat boat in level.Value)
                     {
-                        //Записываем тип мшаины
                         if (boat.GetType().Name == "Boat")
                         {
-                            WriteToFile($"Boat{separator}", fs);
+                            sw.Write("Boat" + separator);
                         }
-                        if (boat.GetType().Name == "MotorBoat")
+                        else if (boat.GetType().Name == "MotorBoat")
                         {
-                            WriteToFile($"MotorBoat{separator}", fs);
+                            sw.Write("MotorBoat" + separator);
                         }
-                        //Записываемые параметры
-                        WriteToFile(boat + Environment.NewLine, fs);
+                        sw.WriteLine(boat);
                     }
                 }
             }
