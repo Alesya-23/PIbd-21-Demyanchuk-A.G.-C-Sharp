@@ -59,6 +59,7 @@ namespace WindowsFormsBoat
             pictureWidth = picWidth;
             pictureHeight = picHeight;
             _places = new List<T>();
+            _currentIndex = -1;
         }
         /// <summary>
         /// Перегрузка оператора сложения
@@ -162,15 +163,16 @@ namespace WindowsFormsBoat
         /// <returns></returns>
         public bool MoveNext()
         {
-            //  throw new NullReferenceException();
+
             if (_currentIndex + 1 < _places.Count)
             {
+                _currentIndex++;
                 return true;
             }
             else
             {
                 return false;
-            };
+            }
 
         }
         /// <summary>

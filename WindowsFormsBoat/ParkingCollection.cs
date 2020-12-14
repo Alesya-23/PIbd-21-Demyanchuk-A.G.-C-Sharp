@@ -110,30 +110,26 @@ namespace WindowsFormsBoat
         public void SaveData(string filename)
         {
             using (StreamWriter fs = new StreamWriter
-               (filename, false, System.Text.Encoding.Default))
+               (filename, false, System.Text.Encoding.UTF8))
             {
                 fs.WriteLine("ParkingCollection");
                 foreach (var level in parkingStages)
                 {
                     fs.WriteLine("Parking" + separator + level.Key);
 
-                    foreach (Boat boat in level.Value)
+                    foreach (ITransportBoat boat in level.Value)
                     {
-                        if (boat != null)
+                        //Записываем тип лодки
+                        if (boat.GetType().Name == "Boat")
                         {
-                            //если место не пустое
-                            //Записываем тип лодки
-                            if (boat.GetType().Name == "Boat")
-                            {
-                                fs.Write($"Boat{separator}");
-                            }
-                            if (boat.GetType().Name == "MotorBoat")
-                            {
-                                fs.Write($"MotorBoat{separator}");
-                            }
-                            //Записываемые параметры
-                            fs.Write(boat + Environment.NewLine);
+                            fs.Write($"Boat{separator}");
                         }
+                        if (boat.GetType().Name == "MotorBoat")
+                        {
+                            fs.Write($"MotorBoat{separator}");
+                        }
+                        //Записываемые параметры
+                        fs.Write(boat + Environment.NewLine);
                     }
                 }
             }

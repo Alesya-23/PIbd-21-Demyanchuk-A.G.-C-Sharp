@@ -118,6 +118,10 @@ namespace WindowsFormsBoat
             {
                 return false;
             }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
             if (SideLine != other.SideLine)
             {
                 return false;
