@@ -164,13 +164,13 @@ namespace WindowsFormsBoat
                 try
                 {
                     var boat = parkingCollection[listBoxParkings.SelectedItem.ToString()] -
-                   Convert.ToInt32(maskedTextBox.Text);
+                    Convert.ToInt32(maskedTextBox.Text);
                     if (boat != null)
                     {
                         FormBoat form = new FormBoat();
                         form.SetBoat(boat);
                         form.ShowDialog();
-                        logger.Info($"Изъят автомобиль {boat} с места{ maskedTextBox.Text}");
+                        logger.Info($"Изъята лодка {boat} с места{ maskedTextBox.Text}");
                         Draw();
                     }
                 }

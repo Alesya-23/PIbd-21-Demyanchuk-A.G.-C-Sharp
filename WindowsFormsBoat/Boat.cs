@@ -124,7 +124,7 @@ namespace WindowsFormsBoat
         }
 
         /// <summary>
-        /// Метод интерфейса IEquatable для класса Car
+        /// Метод интерфейса IEquatable для класса Boat
         /// </summary>
         /// <param name="other"></param>
         /// <returns></returns>

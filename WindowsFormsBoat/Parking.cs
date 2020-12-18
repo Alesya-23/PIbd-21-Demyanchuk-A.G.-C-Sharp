@@ -163,7 +163,6 @@ namespace WindowsFormsBoat
         /// <returns></returns>
         public bool MoveNext()
         {
-
             if (_currentIndex + 1 < _places.Count)
             {
                 _currentIndex++;
@@ -173,7 +172,6 @@ namespace WindowsFormsBoat
             {
                 return false;
             }
-
         }
         /// <summary>
         /// Метод интерфейса IEnumerator для сброса и возврата к началу коллекции
@@ -196,6 +194,5 @@ namespace WindowsFormsBoat
         {
             return this;
         }
-
     }
 }

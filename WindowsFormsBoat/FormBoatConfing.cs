@@ -16,7 +16,7 @@ namespace WindowsFormsBoat
         public FormBoatConfig()
         {
             InitializeComponent();
-            panelBlue.MouseDown += panelColor_MouseDown;
+            panelMediumBlue.MouseDown += panelColor_MouseDown;
             panelRed.MouseDown += panelColor_MouseDown;
             panelLime.MouseDown += panelColor_MouseDown;
             panelYellow.MouseDown += panelColor_MouseDown;

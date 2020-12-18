@@ -104,7 +104,7 @@ namespace WindowsFormsBoat
             stream.Write(info, 0, info.Length);
         }
         /// <summary>
-        /// Сохранение информации по автомобилям на парковках в файл
+        /// Сохранение информации по лодкам на парковках в файл
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
         public void SaveData(string filename)

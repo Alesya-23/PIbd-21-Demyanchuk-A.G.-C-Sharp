@@ -2,7 +2,7 @@
 namespace WindowsFormsBoat
 {
     /// <summary>
-    /// Класс-ошибка "Если не найден автомобиль по определенному месту"
+    /// Класс-ошибка "Если не найдена лодка по определенному месту"
     /// </summary>
     public class ParkingNotFoundException : Exception
     {

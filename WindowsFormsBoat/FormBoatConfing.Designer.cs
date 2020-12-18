@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label labelMaxSpeedBoat;
+            this.labelMaxSpeedBoat = new System.Windows.Forms.Label();
             this.groupBoxParametrs = new System.Windows.Forms.GroupBox();
             this.checkBoxCabin = new System.Windows.Forms.CheckBox();
             this.checkBoxMotors = new System.Windows.Forms.CheckBox();
@@ -43,7 +43,7 @@
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelMainColor = new System.Windows.Forms.Label();
             this.panelYellow = new System.Windows.Forms.Panel();
-            this.panelBlue = new System.Windows.Forms.Panel();
+            this.panelMediumBlue = new System.Windows.Forms.Panel();
             this.panelFicuse = new System.Windows.Forms.Panel();
             this.panelPink = new System.Windows.Forms.Panel();
             this.panelTurquoise = new System.Windows.Forms.Panel();
@@ -54,7 +54,6 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panelBoat = new System.Windows.Forms.Panel();
             this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
-            labelMaxSpeedBoat = new System.Windows.Forms.Label();
             this.groupBoxParametrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpeed)).BeginInit();
@@ -66,11 +65,11 @@
             // 
             // labelMaxSpeedBoat
             // 
-            labelMaxSpeedBoat.Location = new System.Drawing.Point(32, 39);
-            labelMaxSpeedBoat.Name = "labelMaxSpeedBoat";
-            labelMaxSpeedBoat.Size = new System.Drawing.Size(133, 22);
-            labelMaxSpeedBoat.TabIndex = 0;
-            labelMaxSpeedBoat.Text = "Макс. скорость";
+            this.labelMaxSpeedBoat.Location = new System.Drawing.Point(32, 39);
+            this.labelMaxSpeedBoat.Name = "labelMaxSpeedBoat";
+            this.labelMaxSpeedBoat.Size = new System.Drawing.Size(133, 22);
+            this.labelMaxSpeedBoat.TabIndex = 0;
+            this.labelMaxSpeedBoat.Text = "Макс. скорость";
             // 
             // groupBoxParametrs
             // 
@@ -80,7 +79,7 @@
             this.groupBoxParametrs.Controls.Add(this.numericUpDownWeight);
             this.groupBoxParametrs.Controls.Add(this.numericUpDownSpeed);
             this.groupBoxParametrs.Controls.Add(this.labelWeightBoat);
-            this.groupBoxParametrs.Controls.Add(labelMaxSpeedBoat);
+            this.groupBoxParametrs.Controls.Add(this.labelMaxSpeedBoat);
             this.groupBoxParametrs.Location = new System.Drawing.Point(12, 281);
             this.groupBoxParametrs.Name = "groupBoxParametrs";
             this.groupBoxParametrs.Size = new System.Drawing.Size(548, 157);
@@ -206,7 +205,7 @@
             this.groupBoxColors.Controls.Add(this.labelDopColor);
             this.groupBoxColors.Controls.Add(this.labelMainColor);
             this.groupBoxColors.Controls.Add(this.panelYellow);
-            this.groupBoxColors.Controls.Add(this.panelBlue);
+            this.groupBoxColors.Controls.Add(this.panelMediumBlue);
             this.groupBoxColors.Controls.Add(this.panelFicuse);
             this.groupBoxColors.Controls.Add(this.panelPink);
             this.groupBoxColors.Controls.Add(this.panelTurquoise);
@@ -253,14 +252,14 @@
             this.panelYellow.TabIndex = 1;
             this.panelYellow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // panelBlue
+            // panelMediumBlue
             // 
-            this.panelBlue.BackColor = System.Drawing.Color.Blue;
-            this.panelBlue.Location = new System.Drawing.Point(18, 140);
-            this.panelBlue.Name = "panelBlue";
-            this.panelBlue.Size = new System.Drawing.Size(41, 38);
-            this.panelBlue.TabIndex = 1;
-            this.panelBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
+            this.panelMediumBlue.BackColor = System.Drawing.Color.MediumBlue;
+            this.panelMediumBlue.Location = new System.Drawing.Point(18, 140);
+            this.panelMediumBlue.Name = "panelMediumBlue";
+            this.panelMediumBlue.Size = new System.Drawing.Size(41, 38);
+            this.panelMediumBlue.TabIndex = 1;
+            this.panelMediumBlue.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
             // panelFicuse
             // 
@@ -391,7 +390,7 @@
         private System.Windows.Forms.GroupBox groupBoxColors;
         private System.Windows.Forms.Label labelMainColor;
         private System.Windows.Forms.Panel panelYellow;
-        private System.Windows.Forms.Panel panelBlue;
+        private System.Windows.Forms.Panel panelMediumBlue;
         private System.Windows.Forms.Panel panelFicuse;
         private System.Windows.Forms.Panel panelPink;
         private System.Windows.Forms.Panel panelTurquoise;
@@ -403,5 +402,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Panel panelBoat;
         private System.Windows.Forms.PictureBox pictureBoxBoat;
+        private System.Windows.Forms.Label labelMaxSpeedBoat;
     }
 }

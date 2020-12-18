@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WindowsFormsBoat
 {
@@ -10,13 +7,20 @@ namespace WindowsFormsBoat
     {
         public int Compare(Vehicle x, Vehicle y)
         {
-            if (x.MainColor.R > y.MainColor.R)
+            if (x.GetType().Name != y.GetType().Name)
             {
-                return 1;
+                return x.GetType().Name.CompareTo(y.GetType().Name);
             }
-            if(x.MainColor.R < y.MainColor.R)
+            else
             {
-                return -1;
+                if (x.GetType().Name == "Boat" && y.GetType().Name == "Boat")
+                {
+                    return ComparerBoat((Boat)x, (Boat)y);
+                }
+                else if (x.GetType().Name == "MotorBoat" && y.GetType().Name == "MotorBoat")
+                {
+                    return ComparerMotorBoat((MotorBoat)x, (MotorBoat)y);
+                }
             }
             return 0;
         }
