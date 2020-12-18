@@ -92,42 +92,44 @@ namespace WindowsFormsBoat
                 return null;
             }
         }
+
         /// <summary>
-        /// Сохранение информации по лодке на парковках в файл
+        /// Метод записи информации в файл
+        /// </summary>
+        /// <param name="text">Строка, которую следует записать</param>
+        /// <param name="stream">Поток для записи</param>
+        private void WriteToFile(string text, FileStream stream)
+        {
+            byte[] info = new UTF8Encoding(true).GetBytes(text);
+            stream.Write(info, 0, info.Length);
+        }
+        /// <summary>
+        /// Сохранение информации по лодкам на парковках в файл
         /// </summary>
         /// <param name="filename">Путь и имя файла</param>
-        /// <returns></returns>
         public void SaveData(string filename)
         {
-            if (File.Exists(filename))
+            using (StreamWriter fs = new StreamWriter
+               (filename, false, System.Text.Encoding.UTF8))
             {
-                File.Delete(filename);
-            }
-            using (StreamWriter fs = new StreamWriter(filename))
-            {
-                fs.Write($"ParkingCollection{Environment.NewLine}");
+                fs.WriteLine("ParkingCollection");
                 foreach (var level in parkingStages)
                 {
-                    //Начинаем парковку
-                    fs.Write($"Parking{separator}{level.Key}{Environment.NewLine}");
-                    ITransportBoat boat = null;
-                    for (int i = 0; (boat = level.Value.GetNext(i)) != null; i++)
+                    fs.WriteLine("Parking" + separator + level.Key);
+
+                    foreach (ITransportBoat boat in level.Value)
                     {
-                        if (boat != null)
+                        //Записываем тип лодки
+                        if (boat.GetType().Name == "Boat")
                         {
-                            //если место не пустое
-                            //Записываем тип лодки
-                            if (boat.GetType().Name == "Boat")
-                            {
-                                fs.Write($"Boat{separator}");
-                            }
-                            if (boat.GetType().Name == "MotorBoat")
-                            {
-                                fs.Write($"MotorBoat{separator}");
-                            }
-                            //Записываемые параметры
-                            fs.Write(boat + Environment.NewLine);
+                            fs.Write($"Boat{separator}");
                         }
+                        if (boat.GetType().Name == "MotorBoat")
+                        {
+                            fs.Write($"MotorBoat{separator}");
+                        }
+                        //Записываемые параметры
+                        fs.Write(boat + Environment.NewLine);
                     }
                 }
             }

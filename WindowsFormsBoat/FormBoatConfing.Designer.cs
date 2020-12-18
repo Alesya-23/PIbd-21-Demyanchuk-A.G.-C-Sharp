@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label labelMaxSpeedBoat;
+            this.labelMaxSpeedBoat = new System.Windows.Forms.Label();
             this.groupBoxParametrs = new System.Windows.Forms.GroupBox();
             this.checkBoxCabin = new System.Windows.Forms.CheckBox();
             this.checkBoxMotors = new System.Windows.Forms.CheckBox();
@@ -54,7 +54,6 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panelBoat = new System.Windows.Forms.Panel();
             this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
-            labelMaxSpeedBoat = new System.Windows.Forms.Label();
             this.groupBoxParametrs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSpeed)).BeginInit();
@@ -66,11 +65,11 @@
             // 
             // labelMaxSpeedBoat
             // 
-            labelMaxSpeedBoat.Location = new System.Drawing.Point(32, 39);
-            labelMaxSpeedBoat.Name = "labelMaxSpeedBoat";
-            labelMaxSpeedBoat.Size = new System.Drawing.Size(133, 22);
-            labelMaxSpeedBoat.TabIndex = 0;
-            labelMaxSpeedBoat.Text = "Макс. скорость";
+            this.labelMaxSpeedBoat.Location = new System.Drawing.Point(32, 39);
+            this.labelMaxSpeedBoat.Name = "labelMaxSpeedBoat";
+            this.labelMaxSpeedBoat.Size = new System.Drawing.Size(133, 22);
+            this.labelMaxSpeedBoat.TabIndex = 0;
+            this.labelMaxSpeedBoat.Text = "Макс. скорость";
             // 
             // groupBoxParametrs
             // 
@@ -80,7 +79,7 @@
             this.groupBoxParametrs.Controls.Add(this.numericUpDownWeight);
             this.groupBoxParametrs.Controls.Add(this.numericUpDownSpeed);
             this.groupBoxParametrs.Controls.Add(this.labelWeightBoat);
-            this.groupBoxParametrs.Controls.Add(labelMaxSpeedBoat);
+            this.groupBoxParametrs.Controls.Add(this.labelMaxSpeedBoat);
             this.groupBoxParametrs.Location = new System.Drawing.Point(12, 281);
             this.groupBoxParametrs.Name = "groupBoxParametrs";
             this.groupBoxParametrs.Size = new System.Drawing.Size(548, 157);
@@ -403,5 +402,6 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Panel panelBoat;
         private System.Windows.Forms.PictureBox pictureBoxBoat;
+        private System.Windows.Forms.Label labelMaxSpeedBoat;
     }
 }

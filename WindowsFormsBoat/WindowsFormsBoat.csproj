@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boat.cs" />
+    <Compile Include="BoatComparer.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="FormBoat.cs">
       <SubType>Form</SubType>
@@ -78,6 +79,7 @@
     <Compile Include="ITransportBoat.cs" />
     <Compile Include="MotorBoat.cs" />
     <Compile Include="Parking.cs" />
+    <Compile Include="ParkingAlreadyHaveException.cs" />
     <Compile Include="ParkingCollection.cs" />
     <Compile Include="ParkingNotFoundException.cs" />
     <Compile Include="ParkingOverflowException.cs" />
